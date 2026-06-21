@@ -2,6 +2,9 @@
 
 # 🛡️ m365-security-audit
 
+[![CI](https://github.com/bvlik/m365-security-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/bvlik/m365-security-audit/actions/workflows/ci.yml)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 **Read-only security posture auditor for Microsoft 365 / Entra ID.**
 Authenticates with a least-privilege app registration, runs a suite of security checks against the Microsoft Graph API, and produces a scored report (console · JSON · HTML).
 
@@ -25,7 +28,8 @@ In a Microsoft 365 tenant, security drift is silent: global admins pile up, MFA 
 |----|-------|----------|---------------|
 | `PRIV-ROLES` | Privileged role assignments | High | Too many Global Administrators, privileged accounts |
 | `MFA-REG` | MFA registration coverage | High | Users (esp. admins) without registered MFA |
-| `CA-POLICY` | Conditional Access baseline *(next)* | Medium | Missing/disabled CA policies |
+| `CA-POLICY` | Conditional Access baseline | High | No CA policies, or all disabled |
+| `GUEST-USERS` | Guest account exposure | Medium | External guest accounts to review |
 | `LEGACY-AUTH` | Legacy authentication *(next)* | High | Sign-ins using legacy protocols |
 
 ## Architecture
