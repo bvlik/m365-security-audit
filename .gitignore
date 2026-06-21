@@ -1,0 +1,9 @@
+.env
+report.json
+report.html
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.vscode/
